@@ -46,6 +46,11 @@ if ($_POST)
 		
 		$stmt->execute();
 	}
+
+	if (isset($_POST['username']))
+	{
+		echo "Hello ", $_POST['username'];
+	}
 }
 
 
@@ -71,11 +76,25 @@ function showResult(str) {
 </script>
 
 
+<style>
+div form{
+	background-color: lightblue;
+	width: 250px;
+	box-shadow: 10px 10px 5px #888888;
+}
+div h4
+{
+	background-color: lightgray;
+	color: black;
+	box-shadow: 10px 10px 5px #888888;
+	width: 250px;
+	
+}
+</style>
 
-
-
-<div>
-<h4> Add Keyword </h4>
+<body>
+<div class="AddDiv">
+<h4 id='AddH'> Add Keyword </h4>
 <form action="" method="post">
     Key: <input type="text" name="key"><br>
     Value: <input type="text" name="value"><br>
@@ -84,8 +103,8 @@ function showResult(str) {
 </div>
 
 
-<div>
-<h4> Add Template </h4>
+<div class="AddDiv">
+<h4 class="AddH"> Add Template </h4>
 <form action="" method="post">
     Name: <input type="text" name="name"><br>
     Text: <input type="text" name="text"><br>
@@ -95,8 +114,8 @@ function showResult(str) {
 </form>
 </div>
 
-<div>
-<h4> Add Document </h4>
+<div class="AddDiv">
+<h4 class="AddH"> Add Document </h4>
 <form action="" method="post">
     Title: <input type="text" name="title"><br>
     List of Templates (ID): <input type="text" name="templates"><br>
@@ -112,3 +131,5 @@ function showResult(str) {
     <div id="search"> </div>
 </form>
 </div>
+
+</body>
